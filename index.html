@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Marla to Square Feet Converter</title>
+</head>
+<body>
+    <h1>Marla to Square Feet Converter</h1>
+    <form id="areaConverterForm">
+        <label for="marlaInput">Enter Marla:</label>
+        <input type="number" id="marlaInput" step="any" required>
+        <input type="submit" value="Convert">
+    </form>
+    <div id="result"></div>
+
+    <script>
+        document.getElementById("areaConverterForm").addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            const marla = parseFloat(document.getElementById("marlaInput").value);
+
+            if (!isNaN(marla)) {
+                
+                const squareFeet = marla * 272.25;
+
+                
+                document.getElementById("result").innerHTML = `${marla} Marla is equal to ${squareFeet.toFixed(2)} square feet.`;
+            } else {
+              
+                document.getElementById("result").innerHTML = "Please enter a valid number for Marla.";
+            }
+        });
+    </script>
+</body>
+</html>
